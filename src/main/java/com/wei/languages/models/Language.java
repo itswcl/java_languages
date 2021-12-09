@@ -20,12 +20,13 @@ public class Language {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
-    @Size(min = 2, max = 20)
+    @Size(min = 2, max = 20, message="Enter a name")
     private String name;
     @NotNull
-    @Size(min = 2, max = 20)
+    @Size(min = 2, max = 20, message="Enter creator's name")
     private String creator;
     @NotNull
+    @Size(min = 1, max = 20, message="Enter the Version")
     private String currentVersion;
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -35,11 +36,11 @@ public class Language {
     
     public Language() {}
 
-	public Language(String name, String creator, String currentVersion) {
-		this.name = name;
-		this.creator = creator;
-		this.currentVersion = currentVersion;
-	}
+//	public Language(String name, String creator, String currentVersion) {
+//		this.name = name;
+//		this.creator = creator;
+//		this.currentVersion = currentVersion;
+//	}
 
 	public Long getId() {
 		return id;
